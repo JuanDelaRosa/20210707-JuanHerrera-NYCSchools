@@ -2,16 +2,14 @@ package com.juandelarosa.nycschools.ui
 
 import androidx.lifecycle.*
 import com.juandelarosa.nycschools.network.responses.HighSchool
-import com.juandelarosa.nycschools.usercases.GetHighSchoolsUserCase
 import kotlinx.coroutines.launch
-import com.juandelarosa.nycschools.network.common.Result
 import com.juandelarosa.nycschools.network.responses.HighSchoolSAT
 import com.juandelarosa.nycschools.usercases.GetHighSchoolSATUserCase
 
 class InfoViewModel(private val userCase: GetHighSchoolSATUserCase) : ViewModel() {
 
-    private val _highSchool = MutableLiveData<HighSchoolSAT>()
-    val highSchool = _highSchool
+    private val _highSchoolSAT = MutableLiveData<HighSchoolSAT>()
+    val highSchoolSAT = _highSchoolSAT
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
@@ -19,21 +17,26 @@ class InfoViewModel(private val userCase: GetHighSchoolSATUserCase) : ViewModel(
     private val _isNotInternet = MutableLiveData<Boolean>()
     val isNotInternet: LiveData<Boolean> = _isNotInternet
 
+
+    private val _highSchool = MutableLiveData<HighSchool>()
+    val highSchool = _highSchool
+
     //Try to request the API information
-    fun getHighSchoolSAT(){
+    fun getSAT(){
         viewModelScope.launch {
             val lstRes = HighSchoolSAT(
                 "01M292",
-            "HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES",
             "29",
             "355",
             "404",
-            "363")
-            _highSchool.postValue(lstRes)
-            /*when(val result = userCase.invoke()){
+            "363",
+                "HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES"
+            )
+            _highSchoolSAT.postValue(lstRes)
+            /*when(val result = userCase.invoke(highSchool.id)){
                 is Result.Success ->{
                     //Notify the observer that the information was received
-                    _highSchools.postValue(result.data)
+                    _highSchoolSAT.postValue(result.data)
                     _isNotInternet.value = false
                 }
                 is Result.Error ->{
@@ -43,6 +46,10 @@ class InfoViewModel(private val userCase: GetHighSchoolSATUserCase) : ViewModel(
                 }
             }*/
         }
+    }
+
+    fun prepareUI(highSchool: HighSchool) {
+        this.highSchool.postValue(highSchool)
     }
 
     class InfoViewModelFactory(private val userCase: GetHighSchoolSATUserCase) : ViewModelProvider.NewInstanceFactory() {

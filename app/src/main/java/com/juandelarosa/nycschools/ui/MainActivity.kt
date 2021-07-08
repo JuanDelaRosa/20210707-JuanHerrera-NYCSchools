@@ -1,8 +1,9 @@
 package com.juandelarosa.nycschools.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.juandelarosa.nycschools.R
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.juandelarosa.nycschools.app.NYCApp
 import com.juandelarosa.nycschools.databinding.ActivityMainBinding
 
@@ -17,12 +18,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
+        binding.mRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
+        binding.mRecyclerView.adapter = MainAdapter{
+            val intent = Intent(this,InfoActivity::class.java)
+            intent.putExtra("id", it.id)
+            intent.putExtra("name", it.Name)
+            intent.putExtra("overview", it.overview)
+            intent.putExtra("email", it.email)
+            intent.putExtra("phone", it.phone)
+            intent.putExtra("location", it.location)
+            intent.putExtra("website", it.website)
+            startActivity(intent)
+        }
         vm.getHighSchoolList()
         vm.highSchools.observe(this, {highSchool ->
             highSchool?.let {
-                /*LayoutUtils.removeSplashScreen(binding.logo)
-                (binding.feeds.adapter as CardAdapter).setData(it)
-                vm.saveBackup(cards)*/
+                (binding.mRecyclerView.adapter as MainAdapter).setData(it)
             }
         })
     }
