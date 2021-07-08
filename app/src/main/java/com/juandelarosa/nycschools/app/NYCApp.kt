@@ -2,6 +2,7 @@ package com.juandelarosa.nycschools.app
 
 import android.app.Application
 import com.juandelarosa.nycschools.network.repositories.NYCRemoteDataSource
+import com.juandelarosa.nycschools.usercases.GetHighSchoolSATUserCase
 import com.juandelarosa.nycschools.usercases.GetHighSchoolsUserCase
 
 class NYCApp: Application() {
@@ -10,4 +11,7 @@ class NYCApp: Application() {
 
     val getHighSchool: GetHighSchoolsUserCase
         get() = GetHighSchoolsUserCase(repository)
+
+    val getHighSchoolSAT: GetHighSchoolSATUserCase
+        get() = GetHighSchoolSATUserCase(repository)
 }

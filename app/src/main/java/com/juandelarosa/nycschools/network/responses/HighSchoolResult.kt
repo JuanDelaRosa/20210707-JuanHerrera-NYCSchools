@@ -1,6 +1,6 @@
 package com.juandelarosa.nycschools.network.responses
 
-class HighSchoolResult : ArrayList<HighSchoolItemResult>()
+class HighSchoolResult : ArrayList<HighSchoolItemResult?>()
 
 data class HighSchoolItemResult(
     val academicopportunities1: String?,
