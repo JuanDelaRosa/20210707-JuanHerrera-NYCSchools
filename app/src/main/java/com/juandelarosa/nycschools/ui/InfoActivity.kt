@@ -1,7 +1,7 @@
 package com.juandelarosa.nycschools.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.juandelarosa.nycschools.app.NYCApp
 import com.juandelarosa.nycschools.databinding.ActivityInfoBinding
 import com.juandelarosa.nycschools.network.responses.HighSchool

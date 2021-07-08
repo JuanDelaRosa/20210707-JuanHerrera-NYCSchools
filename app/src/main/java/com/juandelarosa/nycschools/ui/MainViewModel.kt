@@ -4,7 +4,6 @@ import androidx.lifecycle.*
 import com.juandelarosa.nycschools.network.responses.HighSchool
 import com.juandelarosa.nycschools.usercases.GetHighSchoolsUserCase
 import kotlinx.coroutines.launch
-import com.juandelarosa.nycschools.network.common.Result
 
 class MainViewModel(private val userCase: GetHighSchoolsUserCase) : ViewModel() {
 

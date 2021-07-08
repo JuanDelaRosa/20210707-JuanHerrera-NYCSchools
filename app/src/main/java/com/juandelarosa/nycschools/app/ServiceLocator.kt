@@ -1,6 +1,5 @@
 package com.juandelarosa.nycschools.app
 
-import android.content.Context
 import com.juandelarosa.nycschools.network.NetworkModule
 import com.juandelarosa.nycschools.network.mappers.NYCMapper
 import com.juandelarosa.nycschools.network.repositories.NYCRemoteDataSource

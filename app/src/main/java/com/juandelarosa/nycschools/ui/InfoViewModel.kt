@@ -2,9 +2,9 @@ package com.juandelarosa.nycschools.ui
 
 import androidx.lifecycle.*
 import com.juandelarosa.nycschools.network.responses.HighSchool
-import kotlinx.coroutines.launch
 import com.juandelarosa.nycschools.network.responses.HighSchoolSAT
 import com.juandelarosa.nycschools.usercases.GetHighSchoolSATUserCase
+import kotlinx.coroutines.launch
 
 class InfoViewModel(private val userCase: GetHighSchoolSATUserCase) : ViewModel() {
 

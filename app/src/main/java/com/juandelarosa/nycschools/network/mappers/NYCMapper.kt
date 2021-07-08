@@ -1,7 +1,6 @@
 package com.juandelarosa.nycschools.network.mappers
 
 import com.juandelarosa.nycschools.network.responses.*
-import java.lang.Exception
 
 class NYCMapper {
     fun fromResponse(response : HighSchoolResult?) : List<HighSchool>{
