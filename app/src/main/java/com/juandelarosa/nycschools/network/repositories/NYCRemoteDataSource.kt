@@ -19,9 +19,9 @@ class NYCRemoteDataSource (private val service: NYCService, private val mapper: 
                     return@withContext Result.Success(mapper.fromResponse(response.body()))
                 }
                 else
-                    return@withContext Result.Error(Exception(Exceptions.NoInternet))
+                    return@withContext Result.Error(Exception(Exceptions.NotAvailable))
             }catch (e:Exception){
-                return@withContext Result.Error(Exception(e.message.toString()))
+                return@withContext Result.Error(Exception(Exceptions.NoInternet))
             }
         }
 
@@ -29,13 +29,13 @@ class NYCRemoteDataSource (private val service: NYCService, private val mapper: 
         withContext(Dispatchers.IO){
             try{
                 val response = service.getHighSchoolSAT(id)
-                if(response.isSuccessful){
+                if(response.isSuccessful && response.body()!="[]\n"){
                     return@withContext Result.Success(mapper.fromSATResponse(response.body()))
                 }
                 else
-                    return@withContext Result.Error(Exception(Exceptions.NoInternet))
+                    return@withContext Result.Error(Exception(Exceptions.NotAvailable))
             }catch (e:Exception){
-                return@withContext Result.Error(Exception(e.message.toString()))
+                return@withContext Result.Error(Exception(Exceptions.NoInternet))
             }
         }
 }

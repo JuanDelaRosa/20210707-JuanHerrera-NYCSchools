@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface NYCService {
     @GET("s3k6-pzi2.json")
-    suspend fun getHighSchools() : Response<HighSchoolResult>
+    suspend fun getHighSchools() : Response<String>
     @GET("f9bf-2cp4.json")
-    suspend fun getHighSchoolSAT(@Query("dbn") dbn:String) : Response<HighSchoolSATResult>
+    suspend fun getHighSchoolSAT(@Query("dbn") dbn:String) : Response<String>
 }

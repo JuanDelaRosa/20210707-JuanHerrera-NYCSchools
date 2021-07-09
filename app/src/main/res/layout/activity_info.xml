@@ -8,17 +8,20 @@
             type="com.juandelarosa.nycschools.featureGetHighSchoolSAT.viewmodel.InfoViewModel" />
     </data>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:textStyle="bold"
+            android:textSize="25sp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -32,8 +35,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/name"
             android:layout_alignParentStart="true"
+            android:textStyle="bold"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:text="Email: "/>
 
@@ -43,8 +47,10 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/emailLabel"
             android:layout_below="@+id/name"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_dark"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:text="@{vm.highSchool.email}"
             tools:text="email" />
@@ -54,9 +60,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/emailLabel"
+            android:textStyle="bold"
             android:layout_alignParentStart="true"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:text="Phone Number: "/>
 
@@ -67,8 +74,10 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/phoneLabel"
             android:layout_below="@+id/email"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_dark"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:text="@{vm.highSchool.phone}"
             tools:text="phone" />
@@ -78,9 +87,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/phoneLabel"
+            android:textStyle="bold"
             android:layout_alignParentStart="true"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:text="Website: "/>
 
@@ -89,8 +99,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/phoneLabel"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_dark"
             android:layout_marginStart="-33dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@id/phoneLabel"
             android:text="@{vm.highSchool.website}"
@@ -102,8 +114,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/website"
             android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_dark"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:text="@{vm.highSchool.location}"
             tools:text="location" />
@@ -218,4 +232,5 @@
             tools:text="number" />
 
     </RelativeLayout>
+    </ScrollView>
 </layout>

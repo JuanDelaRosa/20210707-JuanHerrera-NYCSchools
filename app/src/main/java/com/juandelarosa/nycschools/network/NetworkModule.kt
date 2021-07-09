@@ -4,7 +4,7 @@ import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterF
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 class NetworkModule {
     private val loggingInterceptor by lazy {
@@ -23,7 +23,7 @@ class NetworkModule {
         return Retrofit.Builder()
             .baseUrl(endpointURL)
             .client(httpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(ScalarsConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
     }

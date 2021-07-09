@@ -6,6 +6,7 @@ data class HighSchool(
     val Name : String,
     val overview: String,
     val location: String,
+    val coordenates: String,
     val phone: String,
     val email: String,
     val website: String

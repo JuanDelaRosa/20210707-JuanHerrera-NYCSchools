@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.juandelarosa.nycschools.app.LayoutUtils
 import com.juandelarosa.nycschools.app.NYCApp
 import com.juandelarosa.nycschools.databinding.ActivityMainBinding
 import com.juandelarosa.nycschools.featureGetHighSchoolSAT.view.InfoActivity
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("email", it.email)
             intent.putExtra("phone", it.phone)
             intent.putExtra("location", it.location)
+            intent.putExtra("coordenates", it.coordenates)
             intent.putExtra("website", it.website)
             startActivity(intent)
         }
@@ -38,6 +40,9 @@ class MainActivity : AppCompatActivity() {
             highSchool?.let {
                 (binding.mRecyclerView.adapter as MainAdapter).setData(it)
             }
+        })
+        vm.error.observe(this, {
+            LayoutUtils.showSnack(binding.root, it)
         })
     }
 }

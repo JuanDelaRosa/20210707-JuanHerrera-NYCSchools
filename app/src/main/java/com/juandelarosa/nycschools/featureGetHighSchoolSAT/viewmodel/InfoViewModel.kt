@@ -6,6 +6,8 @@ import com.juandelarosa.nycschools.featureGetHighSchoolSAT.usercase.GetHighSchoo
 import com.juandelarosa.nycschools.featureGetHighSchools.model.HighSchool
 import kotlinx.coroutines.launch
 
+import com.juandelarosa.nycschools.network.common.Result
+
 //ViewModel of the Info activity
 class InfoViewModel(private val userCase: GetHighSchoolSATUserCase) : ViewModel() {
 
@@ -22,10 +24,12 @@ class InfoViewModel(private val userCase: GetHighSchoolSATUserCase) : ViewModel(
     private val _highSchool = MutableLiveData<HighSchool>()
     val highSchool = _highSchool
 
+    private var id = ""
+
     //Try to request the API information
     fun getSAT(){
         viewModelScope.launch {
-            val lstRes = HighSchoolSAT(
+           /* val lstRes = HighSchoolSAT(
                 "01M292",
             "29",
             "355",
@@ -33,8 +37,8 @@ class InfoViewModel(private val userCase: GetHighSchoolSATUserCase) : ViewModel(
             "363",
                 "HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES"
             )
-            _highSchoolSAT.postValue(lstRes)
-            /*when(val result = userCase.invoke(highSchool.id)){
+            _highSchoolSAT.postValue(lstRes)*/
+            when(val result = userCase.invoke(id)){
                 is Result.Success ->{
                     //Notify the observer that the information was received
                     _highSchoolSAT.postValue(result.data)
@@ -45,12 +49,13 @@ class InfoViewModel(private val userCase: GetHighSchoolSATUserCase) : ViewModel(
                     _error.postValue(result.exception.message)
                     _isNotInternet.value = true
                 }
-            }*/
+            }
         }
     }
 
-    fun prepareUI(highSchool: HighSchool) {
-        this.highSchool.postValue(highSchool)
+    fun prepareUI(hs: HighSchool) {
+        id = hs.id
+        _highSchool.postValue(hs)
     }
 
     class InfoViewModelFactory(private val userCase: GetHighSchoolSATUserCase) : ViewModelProvider.NewInstanceFactory() {
