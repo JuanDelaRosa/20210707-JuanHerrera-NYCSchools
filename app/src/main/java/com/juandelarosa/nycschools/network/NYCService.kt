@@ -1,7 +1,7 @@
 package com.juandelarosa.nycschools.network
 
-import com.juandelarosa.nycschools.network.responses.HighSchoolResult
-import com.juandelarosa.nycschools.network.responses.HighSchoolSATResult
+import com.juandelarosa.nycschools.featureGetHighSchoolSAT.response.HighSchoolSATResult
+import com.juandelarosa.nycschools.featureGetHighSchools.response.HighSchoolResult
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

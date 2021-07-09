@@ -1,5 +1,6 @@
-package com.juandelarosa.nycschools.network.responses
+package com.juandelarosa.nycschools.featureGetHighSchools.response
 
+///Response from service
 class HighSchoolResult : ArrayList<HighSchoolItemResult?>()
 
 data class HighSchoolItemResult(

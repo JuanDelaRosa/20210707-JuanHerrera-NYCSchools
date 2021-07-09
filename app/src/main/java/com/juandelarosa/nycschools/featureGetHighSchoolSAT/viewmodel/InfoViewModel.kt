@@ -1,11 +1,12 @@
-package com.juandelarosa.nycschools.ui
+package com.juandelarosa.nycschools.featureGetHighSchoolSAT.viewmodel
 
 import androidx.lifecycle.*
-import com.juandelarosa.nycschools.network.responses.HighSchool
-import com.juandelarosa.nycschools.network.responses.HighSchoolSAT
-import com.juandelarosa.nycschools.usercases.GetHighSchoolSATUserCase
+import com.juandelarosa.nycschools.featureGetHighSchoolSAT.model.HighSchoolSAT
+import com.juandelarosa.nycschools.featureGetHighSchoolSAT.usercase.GetHighSchoolSATUserCase
+import com.juandelarosa.nycschools.featureGetHighSchools.model.HighSchool
 import kotlinx.coroutines.launch
 
+//ViewModel of the Info activity
 class InfoViewModel(private val userCase: GetHighSchoolSATUserCase) : ViewModel() {
 
     private val _highSchoolSAT = MutableLiveData<HighSchoolSAT>()

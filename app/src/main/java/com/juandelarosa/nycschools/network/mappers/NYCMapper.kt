@@ -1,7 +1,12 @@
 package com.juandelarosa.nycschools.network.mappers
 
-import com.juandelarosa.nycschools.network.responses.*
+import com.juandelarosa.nycschools.featureGetHighSchoolSAT.model.HighSchoolSAT
+import com.juandelarosa.nycschools.featureGetHighSchoolSAT.response.HighSchoolSATResult
+import com.juandelarosa.nycschools.featureGetHighSchools.model.HighSchool
+import com.juandelarosa.nycschools.featureGetHighSchools.response.HighSchoolItemResult
+import com.juandelarosa.nycschools.featureGetHighSchools.response.HighSchoolResult
 
+//Class dedicated to mapping the response of the server in clean information, free of nulls and ready to use
 class NYCMapper {
     fun fromResponse(response : HighSchoolResult?) : List<HighSchool>{
         return response?.let { list ->
@@ -39,7 +44,7 @@ class NYCMapper {
         )
     }
 
-    fun fromSATResponse(response: HighSchoolSATResult?) : HighSchoolSAT{
+    fun fromSATResponse(response: HighSchoolSATResult?) : HighSchoolSAT {
         return try {
             response?.let {
                 HighSchoolSAT(

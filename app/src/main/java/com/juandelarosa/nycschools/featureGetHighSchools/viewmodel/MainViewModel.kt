@@ -1,10 +1,11 @@
-package com.juandelarosa.nycschools.ui
+package com.juandelarosa.nycschools.featureGetHighSchools.viewmodel
 
 import androidx.lifecycle.*
-import com.juandelarosa.nycschools.network.responses.HighSchool
-import com.juandelarosa.nycschools.usercases.GetHighSchoolsUserCase
+import com.juandelarosa.nycschools.featureGetHighSchools.model.HighSchool
+import com.juandelarosa.nycschools.featureGetHighSchools.usercase.GetHighSchoolsUserCase
 import kotlinx.coroutines.launch
 
+//ViewModel of the main activity
 class MainViewModel(private val userCase: GetHighSchoolsUserCase) : ViewModel() {
 
     private val _highSchools = MutableLiveData<List<HighSchool>>()

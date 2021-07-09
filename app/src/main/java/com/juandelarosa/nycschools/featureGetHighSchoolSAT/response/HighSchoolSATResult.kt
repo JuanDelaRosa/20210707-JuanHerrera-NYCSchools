@@ -1,5 +1,6 @@
-package com.juandelarosa.nycschools.network.responses
+package com.juandelarosa.nycschools.featureGetHighSchoolSAT.response
 
+///Response from service
 class HighSchoolSATResult : ArrayList<HighSchoolSATResultItem>()
 
 data class HighSchoolSATResultItem(

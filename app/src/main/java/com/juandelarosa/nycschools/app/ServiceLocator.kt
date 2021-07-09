@@ -5,7 +5,7 @@ import com.juandelarosa.nycschools.network.mappers.NYCMapper
 import com.juandelarosa.nycschools.network.repositories.NYCRemoteDataSource
 
 
-//Object dedicated to building the service repository (API and DB)
+//Object dedicated to building the service repository
 object ServiceLocator {
     private val networkModule by lazy {
         NetworkModule()

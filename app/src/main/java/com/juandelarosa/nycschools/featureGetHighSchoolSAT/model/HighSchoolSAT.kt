@@ -1,5 +1,6 @@
-package com.juandelarosa.nycschools.network.responses
+package com.juandelarosa.nycschools.featureGetHighSchoolSAT.model
 
+///Info to use in UI
 data class HighSchoolSAT(
     val id: String,
     val numOfSatTestTakers: String,

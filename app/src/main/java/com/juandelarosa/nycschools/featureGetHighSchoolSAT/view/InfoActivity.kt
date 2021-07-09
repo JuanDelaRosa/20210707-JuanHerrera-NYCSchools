@@ -1,14 +1,16 @@
-package com.juandelarosa.nycschools.ui
+package com.juandelarosa.nycschools.featureGetHighSchoolSAT.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.juandelarosa.nycschools.app.NYCApp
 import com.juandelarosa.nycschools.databinding.ActivityInfoBinding
-import com.juandelarosa.nycschools.network.responses.HighSchool
+import com.juandelarosa.nycschools.featureGetHighSchoolSAT.viewmodel.InfoViewModel
+import com.juandelarosa.nycschools.featureGetHighSchools.model.HighSchool
 
 class InfoActivity : AppCompatActivity() {
     private val binding: ActivityInfoBinding by lazy { ActivityInfoBinding.inflate(layoutInflater) }
-    private val vm: InfoViewModel by lazy { InfoViewModel.InfoViewModelFactory((application as NYCApp).getHighSchoolSAT).create(InfoViewModel::class.java) }
+    private val vm: InfoViewModel by lazy { InfoViewModel.InfoViewModelFactory((application as NYCApp).getHighSchoolSAT)
+        .create(InfoViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

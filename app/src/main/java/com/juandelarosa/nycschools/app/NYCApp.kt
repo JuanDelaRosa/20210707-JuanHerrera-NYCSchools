@@ -1,10 +1,11 @@
 package com.juandelarosa.nycschools.app
 
 import android.app.Application
+import com.juandelarosa.nycschools.featureGetHighSchoolSAT.usercase.GetHighSchoolSATUserCase
+import com.juandelarosa.nycschools.featureGetHighSchools.usercase.GetHighSchoolsUserCase
 import com.juandelarosa.nycschools.network.repositories.NYCRemoteDataSource
-import com.juandelarosa.nycschools.usercases.GetHighSchoolSATUserCase
-import com.juandelarosa.nycschools.usercases.GetHighSchoolsUserCase
 
+//User cases that are available in this application
 class NYCApp: Application() {
     private  val repository: NYCRemoteDataSource
         get() = ServiceLocator.provideRepository()

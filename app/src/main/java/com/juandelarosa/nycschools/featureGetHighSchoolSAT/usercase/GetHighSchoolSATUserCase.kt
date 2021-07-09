@@ -1,4 +1,4 @@
-package com.juandelarosa.nycschools.usercases
+package com.juandelarosa.nycschools.featureGetHighSchoolSAT.usercase
 
 import com.juandelarosa.nycschools.network.repositories.NYCRemoteDataSource
 

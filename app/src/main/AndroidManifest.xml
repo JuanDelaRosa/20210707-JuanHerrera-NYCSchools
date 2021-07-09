@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.20210707JuanHerreraNYCSchools">
-        <activity android:name=".ui.InfoActivity"></activity>
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".featureGetHighSchoolSAT.view.InfoActivity"></activity>
+        <activity android:name=".featureGetHighSchools.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

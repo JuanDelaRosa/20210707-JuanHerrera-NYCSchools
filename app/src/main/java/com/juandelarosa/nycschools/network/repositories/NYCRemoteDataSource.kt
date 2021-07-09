@@ -1,11 +1,11 @@
 package com.juandelarosa.nycschools.network.repositories
 
+import com.juandelarosa.nycschools.featureGetHighSchoolSAT.model.HighSchoolSAT
+import com.juandelarosa.nycschools.featureGetHighSchools.model.HighSchool
 import com.juandelarosa.nycschools.network.NYCService
 import com.juandelarosa.nycschools.network.common.Exceptions
 import com.juandelarosa.nycschools.network.common.Result
 import com.juandelarosa.nycschools.network.mappers.NYCMapper
-import com.juandelarosa.nycschools.network.responses.HighSchool
-import com.juandelarosa.nycschools.network.responses.HighSchoolSAT
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

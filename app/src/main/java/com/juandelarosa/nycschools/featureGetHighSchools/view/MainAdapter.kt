@@ -1,10 +1,10 @@
-package com.juandelarosa.nycschools.ui
+package com.juandelarosa.nycschools.featureGetHighSchools.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.juandelarosa.nycschools.databinding.CardViewItemBinding
-import com.juandelarosa.nycschools.network.responses.HighSchool
+import com.juandelarosa.nycschools.featureGetHighSchools.model.HighSchool
 
 class MainAdapter(val click: (HighSchool)-> Unit) : RecyclerView.Adapter<MainAdapter.NYCViewHolder>() {
     var schools : ArrayList<HighSchool> = arrayListOf()

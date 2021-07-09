@@ -1,5 +1,6 @@
-package com.juandelarosa.nycschools.network.responses
+package com.juandelarosa.nycschools.featureGetHighSchools.model
 
+///Info to use in UI
 data class HighSchool(
     val id : String,
     val Name : String,
